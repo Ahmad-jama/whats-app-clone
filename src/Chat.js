@@ -36,22 +36,15 @@ const Chat = () => {
     }
   }, [id])
 
-  console.log(message)
-
-  /*  React.useEffect(() => {
-    setSeed(Math.floor(Math.random() * 5000))
-  }, []) */
-
   const sendMessage = (e) => {
     e.preventDefault()
-if(value){
-  alert(typeof value)
+    if (value) {
       db.collection('rooms').doc(id).collection('message').add({
-      message: value,
-      name: user.displayName,
-      time: firebase.firestore.FieldValue.serverTimestamp(),
-    })
-}
+        message: value,
+        name: user.displayName,
+        time: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+    }
     setValue('')
   }
 
@@ -84,8 +77,8 @@ if(value){
       </div>
 
       <div className="chat_body">
-        {message.map((message) => (
-          <p
+        {message.map((message, index) => (
+          <p key={index}
             className={`message ${
               message.name === user.displayName && ' reciever'
             }`}

@@ -51,3 +51,9 @@
   background-color: white;
   flex: 1;
 }
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
