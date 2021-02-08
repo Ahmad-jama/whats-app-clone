@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom'
 import { db } from './firebase'
 import { useStateValue } from './StateProvider'
 import firebase from 'firebase'
-const Chat = () => {
+const Chat = ({ show }) => {
   /*   const [seed, setSeed] = React.useState('')
    */
   const [value, setValue] = React.useState('')
@@ -49,7 +49,7 @@ const Chat = () => {
   }
 
   return (
-    <div className="chat">
+    <div className={`chat ${show && 'showChat'}`}>
       <div className="chat_header">
         <Avatar src={`https://avatars.dicebear.com/api/human/${id}.svg`} />
 
@@ -78,7 +78,8 @@ const Chat = () => {
 
       <div className="chat_body">
         {message.map((message, index) => (
-          <p key={index}
+          <p
+            key={index}
             className={`message ${
               message.name === user.displayName && ' reciever'
             }`}

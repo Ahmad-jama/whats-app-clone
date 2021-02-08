@@ -3,8 +3,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  display: none;
 }
 
+.showChat {
+  display: block;
+}
 .chat_header {
   padding: 10px;
   display: flex;

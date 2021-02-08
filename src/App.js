@@ -7,6 +7,8 @@ import Login from './Login'
 import { useStateValue } from './StateProvider'
 function App() {
   const [{ user }, dispatch] = useStateValue()
+  const [show, setShow] = React.useState(false)
+
 
   return (
     <div className="app">
@@ -15,14 +17,17 @@ function App() {
       ) : (
         <div className="app_body">
           <Router>
-            <Sidebar />
+            <Sidebar show={show} />
+                  <button className="showBtn" onClick={() => setShow(!show)}>
+        {show ? 'show' : 'hide'}
+      </button>
             <Switch>
               <Route path="/room/:id">
-                <Chat />
+                <Chat show={show}/>
               </Route>
 
               <Route path="/">
-                <Chat />
+                <Chat show={show} />
               </Route>
             </Switch>
           </Router>

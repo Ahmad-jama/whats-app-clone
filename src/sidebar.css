@@ -4,6 +4,17 @@
   flex: 0.35;
   border-right: 1px solid lightgray;
 }
+
+.hide {
+  display: none;
+}
+
+@media(max-width:600px){
+  .sidebar{
+    flex:1
+  }
+}
+
 .sidebar_header {
   display: flex;
   justify-content: space-between;
@@ -50,10 +61,4 @@
 .sidebar-chats {
   background-color: white;
   flex: 1;
-}
-
-@media (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
 }

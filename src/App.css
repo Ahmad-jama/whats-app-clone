@@ -11,3 +11,21 @@
   box-shadow: -1px 4px 20px -6px black;
   margin-top: -50px;
 }
+
+.showBtn {
+  border-radius: 5px;
+  position: fixed;
+  background: none;
+  color: white;
+  padding: 10px;
+  padding: 3px 9px;
+  outline: none;
+  border: 1px solid #000;
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .showBtn {
+    display: block;
+  }
+}
