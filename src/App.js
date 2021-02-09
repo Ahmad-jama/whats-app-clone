@@ -9,7 +9,6 @@ function App() {
   const [{ user }, dispatch] = useStateValue()
   const [show, setShow] = React.useState(false)
 
-
   return (
     <div className="app">
       {!user ? (
@@ -17,13 +16,13 @@ function App() {
       ) : (
         <div className="app_body">
           <Router>
-            <Sidebar show={show} />
-                  <button className="showBtn" onClick={() => setShow(!show)}>
-        {show ? 'show' : 'hide'}
-      </button>
+            <Sidebar setShow={setShow} show={show} />
+            <button className="showBtn" onClick={() => setShow(!show)}>
+              {show ? 'show' : 'hide'}
+            </button>
             <Switch>
               <Route path="/room/:id">
-                <Chat show={show}/>
+                <Chat show={show} />
               </Route>
 
               <Route path="/">

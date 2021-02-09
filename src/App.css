@@ -16,16 +16,22 @@
   border-radius: 5px;
   position: fixed;
   background: none;
-  color: white;
+  color: balck;
   padding: 10px;
   padding: 3px 9px;
   outline: none;
-  border: 1px solid #000;
+  border: 3px solid #000;
   display: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .showBtn {
     display: block;
+    left: 50%;
+    transform: translate(-50%);
+    top: 4%;
+  }
+  .app_body {
+    width: 100%;
   }
 }

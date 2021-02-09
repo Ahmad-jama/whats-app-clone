@@ -3,12 +3,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  display: none;
 }
 
-.showChat {
-  display: block;
-}
 .chat_header {
   padding: 10px;
   display: flex;
@@ -95,8 +91,13 @@
   color: gray;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .chat {
+    display: none;
+  }
+
+  .showChat {
+    display: block;
     flex: 1;
   }
 }
